@@ -49,7 +49,7 @@ class SignUpTests(TestCase):
                 "password2": "testpass123",
             }
         )
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
         self.assertEqual(get_user_model().objects.all().count(), 1)
         self.assertEqual(get_user_model().objects.all()[0].username, "testuser")
         self.assertEqual(get_user_model().objects.all()[0].email, "testuser@email.com")

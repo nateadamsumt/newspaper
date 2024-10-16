@@ -37,7 +37,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    #local
     "accounts",
+    "pages",
+    #3rd party
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
 
 AUTH_USER_MODEL = "accounts.CustomUser"
@@ -52,7 +57,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "django_project.urls"
 
 TEMPLATES = [
     {
@@ -124,5 +128,9 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+ROOT_URLCONF = "django_project.urls"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK =  "bootstrap5"
