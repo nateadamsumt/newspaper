@@ -7,7 +7,7 @@
 <div class="card">
     <div class="card-header">
         <span class="fw-bold">
-            <a href="{{ articles.get_absolute_url }}">{{ article.title }}</a>
+            <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
         </span> &middot;
         <span class="text-muted">by {{ article.author }} | 
             {{ article.date }}
@@ -21,6 +21,17 @@
         <a href="{% url 'article_edit' article.pk %}">Edit</a> 
         <a href="{% url 'article_delete' article.pk %}">Delete</a>
         {% endif %}
+        <a href="{{ article.get_absolute_url }}">New Comment</a>
+    </div>
+    <div class="card-footer">
+        {% for comment in article.comment_set.all %}
+        <p>
+            <span class="fw-bold">
+                {{ comment.author }} &middot;
+            </span>
+            {{ comment }}
+        </p>
+        {% endfor %}
     </div>
 </div>
 <br />
