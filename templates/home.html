@@ -11,9 +11,34 @@
     <button type="submit">Log Out</button>
 </form>
 <br/>
-<p><a class="btn btn-primary" href="{% url 'article_list' %}" role="button">
-    View all articles
-</a></p>
+<div class="banner-container">
+    <div class="banner-content" id="banner">
+        <div class="banner-item">Item 1</div>
+        <div class="banner-item">Item 2</div>
+        <div class="banner-item">Item 3</div>
+        <div class="banner-item">Item 4</div>
+        <div class="banner-item">Item 5</div>
+    </div>
+</div>
+<script>
+    const banner = document.getElementById('banner');
+    const bannerItems = banner.children;
+for (let i = 0; i < bannerItems.length; i++) {
+    const clone = bannerItems[i].cloneNode(true);
+    banner.appendChild(clone);
+}
+</script>
+<div class="funny">
+    <p><a class="btn btn-primary" href="{% url 'article_list' %}" role="button">
+        View all articles
+    </a></p>
+    <p>Our recent articles</p>
+    <span class="fw-bold">
+        <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+    </span> &middot;
+    <span class="text-muted"> {{ article.body }}
+    </span>
+</div>
 {% else %}
 <p>You are not logged in</p>
 <a href="{% url 'login' %}">Log In</a> | 

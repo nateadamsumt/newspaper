@@ -1,0 +1,42 @@
+body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+  }
+  
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+  .funny{
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.banner-container {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+
+.banner-content {
+    display: inline-block;
+    animation: scroll 10s linear infinite;
+}
+
+.banner-item {
+    display: inline-block;
+    padding: 20px;
+    font-size: 24px;
+    background: #f2f2f2;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
